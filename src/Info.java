@@ -118,6 +118,9 @@ public class Info  {
         System.out.println("Input gender");
         gender = scanner.nextLine();
 
+        System.out.println("Input address");
+        address = scanner.nextLine();
+
         System.out.println("Input dob");
         dob = scanner.nextLine();
 

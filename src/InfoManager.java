@@ -81,7 +81,19 @@ public class InfoManager {
             bw.write("Email");
             bw.newLine();
             for (Info data : list) {
-                bw.write(String.valueOf(list));
+                bw.write(data.phoneNumber);
+                bw.write(",");
+                bw.write(data.groupInfo);
+                bw.write(",");
+                bw.write(data.name);
+                bw.write(",");
+                bw.write(data.gender);
+                bw.write(",");
+                bw.write(data.address);
+                bw.write(",");
+                bw.write(data.dob);
+                bw.write(",");
+                bw.write(data.email);
                 bw.newLine();
             }
         } catch (Exception e) {
