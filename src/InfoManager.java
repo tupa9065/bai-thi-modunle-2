@@ -45,17 +45,20 @@ public class InfoManager {
         ArrayList<Info> newInfos = new ArrayList<>();
         try {
             File f = new File("data\\contacts.csv");
-            if (!f.isFile() || f.length()==0){
-                System.out.println(" file trống");
-                return newInfos;
-            }
             BufferedReader bufferedReader = new BufferedReader(new FileReader(f));
-            String str = "";
             String line;
-            while ((line = bufferedReader.readLine()) != null){
-                str = str.concat(line);
-                str = str.concat("\n");
-                System.out.println(str);
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] infos = line.split(",");
+                Info newInfo = new Info();
+                newInfo.setPhoneNumber(infos[0]);
+                newInfo.setGroupInfo(infos[1]);
+                newInfo.setName(infos[2]);
+                newInfo.setGender(infos[2]);
+                newInfo.setAddress(infos[4]);
+                newInfo.setDob(infos[5]);
+                newInfo.setEmail(infos[6]);
+                newInfos.add(newInfo);
+
             }
             bufferedReader.close();
         } catch (IOException e) {
@@ -65,21 +68,25 @@ public class InfoManager {
     }
 
     public void saveDataToFile(ArrayList<Info> list) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("data\\contacts.csv"))) {
-            bw.write("Số điện thoại");
-            bw.write(",");
-            bw.write("Nhóm");
-            bw.write(",");
-            bw.write("Họ tên");
-            bw.write(",");
-            bw.write("Giới tính");
-            bw.write(",");
-            bw.write("Địa chỉ");
-            bw.write(",");
-            bw.write("Ngày sinh");
-            bw.write(",");
-            bw.write("Email");
-            bw.newLine();
+        try {
+
+            BufferedWriter bw = new BufferedWriter(new FileWriter("data\\contacts.csv"));
+
+//            bw.write("Số điện thoại");
+//            bw.write(",");
+//            bw.write("Nhóm");
+//            bw.write(",");
+//            bw.write("Họ tên");
+//            bw.write(",");
+//            bw.write("Giới tính");
+//            bw.write(",");
+//            bw.write("Địa chỉ");
+//            bw.write(",");
+//            bw.write("Ngày sinh");
+//            bw.write(",");
+//            bw.write("Email");
+//            bw.newLine();
+
             for (Info data : list) {
                 bw.write(data.phoneNumber);
                 bw.write(",");

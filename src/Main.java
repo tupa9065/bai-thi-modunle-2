@@ -69,7 +69,7 @@ public class Main {
                 }
                     break;
                 case "6":
-                    //infoArrayList = infoManager.getDatafromFile();
+                    infoArrayList = infoManager.getDatafromFile();
                     break;
                 case "7":
                     infoManager.saveDataToFile(infoArrayList);
