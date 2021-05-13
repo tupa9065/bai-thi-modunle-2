@@ -74,6 +74,8 @@ public class Main {
                 case "7":
                     infoManager.saveDataToFile(infoArrayList);
                     break;
+                case "8":
+                    break;
                 default:
                     System.out.println("lựa chọn không hợp lệ");
 

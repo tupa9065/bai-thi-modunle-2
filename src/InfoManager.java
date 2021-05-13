@@ -68,10 +68,7 @@ public class InfoManager {
     }
 
     public void saveDataToFile(ArrayList<Info> list) {
-        try {
-
-            BufferedWriter bw = new BufferedWriter(new FileWriter("data\\contacts.csv"));
-
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("data\\contacts.csv"))) {
 //            bw.write("Số điện thoại");
 //            bw.write(",");
 //            bw.write("Nhóm");
